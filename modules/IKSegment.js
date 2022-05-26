@@ -1,5 +1,5 @@
 export default class segment {
-    constructor(len,Ax,Ay,angle,parent=null) {
+    constructor(len,Ax,Ay,angle,texture,parent=null) {
         this.Ax=Ax;
         this.Ay=Ay;
         this.len=len;
@@ -10,15 +10,11 @@ export default class segment {
 
     create(){
         this.line = new PIXI.Graphics()
-        this.line.lineStyle(2, 0xFFFFFF, 1);
-        // this.line.moveTo(this.Ax, this.Ay);
-        // this.line.lineTo(this.Bx, this.By);
-
+        this.line.lineStyle(2, 0xFF0000, 1);
         return this.line;
     }
 
     calculatePointB(){
-        // dist:(Math.sqrt((Math.pow((bx - ax), 2))+ (Math.pow((by - ay), 2)))- len).toFixed(5),
         this.Bx=(this.Ax+this.len*((this.Bx-this.Ax)/Math.sqrt(Math.pow((this.Bx - this.Ax), 2)+Math.pow((this.By - this.Ay), 2))))
         this.By=(this.Ay+this.len*((this.By-this.Ay)/Math.sqrt(Math.pow((this.Bx - this.Ax), 2)+Math.pow((this.By - this.Ay), 2))))
     }
@@ -32,17 +28,35 @@ export default class segment {
             this.Ay=window.app.renderer.plugins.interaction.mouse.global.y;
         }
         this.line.clear()
-        this.line.lineStyle(2, 0xFFFFFF, 1);
+        this.line.lineStyle(5, 0xFF0000, 1, .5, false);
         this.line.position.set(this.Ax,this.Ay)
-        // this.getPointB()
         this.calculatePointB()
+
+        // if (this.parent){
+        //     this.angle=(Math.asin(((this.By-this.Ay)/this.len))*180/Math.PI)-this.parent.angle
+        // }else{
+        //     this.angle=Math.asin(((this.By-this.Ay)/this.len))*180/Math.PI
+        // }
+        //
+        // if (this.angle<-45){
+        //     this.getPointB(-45)
+        // }
+        // if (this.angle>45){
+        //     this.getPointB(45)
+        // }
+        // console.log(this.angle)
+
         this.line.lineTo(this.Bx-this.Ax,this.By-this.Ay)
+
+        //if angle < minangle, seta o b pelo angulo minimo
+        //if angle > maxangle, seta o b pelo angulo maximo
+
     }
 
-    getPointB(){
-        this.angle=this.angle*Math.PI/180;
-        this.Bx=(this.Ax+(this.len*Math.cos(this.angle)))
-        this.By=(this.Ay+(this.len*Math.sin(this.angle)))
+    getPointB(angle){
+        angle=this.angle*Math.PI/180;
+        this.Bx=(this.Ax+(this.len*Math.cos(angle)))
+        this.By=(this.Ay+(this.len*Math.sin(angle)))
     }
 
 }
