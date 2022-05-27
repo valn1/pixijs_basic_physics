@@ -1,0 +1,21 @@
+{
+    "$schema": "https://aka.ms/codetour-schema",
+    "title": "Rock paper scissors",
+    "steps": [
+      {
+        "file": "index.html",
+        "line": 5,
+        "description": "Hey! 👋 Welcome to the Rock Paper Scissors sample. Use this tour to guide you through the app, and learn how to interact with its live coding environment.\n\n---\n\nTo start, the `<span>` elements above are what define the game's \"hands\", using simple emoji characters. Try changing their text content and watch it take effect immediately!\n\nOnce your done, click the `Next` link below 👇"
+      },
+      {
+        "file": "style.css",
+        "line": 6,
+        "description": "This is the CSS rule that defines the game board's background color. Hover over the `rgb` text to bring up the color swatch, and then click around to select a color you like. "
+      },
+      {
+        "file": "script.js",
+        "line": 33,
+        "description": "This specifies the message that is displayed when you win the game. Change it to something different, and then play the game a few times until you win (and see your custom message!).\n\nOnce your finished, click the `Finish Tour` link below, and explore the app on your own. Thanks for trying this sample out!"
+      }
+    ]
+  }
