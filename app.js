@@ -12,7 +12,6 @@ window.app=app;
 app.renderer.view.style.position='absolute'
 
 document.body.appendChild(app.view);
-console.log('penis')
 
 let lines=[]
 let branches=[]
