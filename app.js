@@ -12,6 +12,7 @@ window.app=app;
 app.renderer.view.style.position='absolute'
 
 document.body.appendChild(app.view);
+console.log('penis')
 
 let lines=[]
 let branches=[]
@@ -28,7 +29,7 @@ for (let i = 0; i < 5; i++) {
     //     branches.push(new branch(50,300,null,lines[i], .5))
     //     app.stage.addChild(branches[i].create())
     //
-    //     //obviamente, isso aqui é só pra testes, o produto final não vai ser feito na mão desse jeito
+    //     //obviamente, isso aqui ï¿½ sï¿½ pra testes, o produto final nï¿½o vai ser feito na mï¿½o desse jeito
     // }
 }
 
@@ -38,11 +39,11 @@ for (let i = 0; i < 5; i++) {
 // let cotoco = new branch(100,300,null,branches[0], .8)
 // app.stage.addChild(cotoco.create())
 
-//esse aí em cima é o dragão hehe, aqui em baixo tá o código q faz o dragão se mexer
+//esse aï¿½ em cima ï¿½ o dragï¿½o hehe, aqui em baixo tï¿½ o cï¿½digo q faz o dragï¿½o se mexer
 
 app.ticker.add(() => {
     lines.forEach(line=>{
-        // line.len=line.len*1.001; //dá pra fazer a linha crescer, como nesse exemplo
+        // line.len=line.len*1.001; //dï¿½ pra fazer a linha crescer, como nesse exemplo
         line.update()
     })
     branches.forEach(apendage=>{
